@@ -1,4 +1,6 @@
-# iSAPsolutions.si — Website (Draft v1)
+# iSAPsolutions.si — Website (Premium v2)
+
+v2 (2026-10-24) replaces the plain v1 after feedback that v1 looked oversimplistic. v1 is backed up in the goal files as `isapsolutions-v1-index.html`, not in this repo.
 
 Single-page, client-facing website for **iSAPsolutions.si**.
 SI = Super Intelligence. Not a country claim.
@@ -22,6 +24,8 @@ SI = Super Intelligence. Not a country claim.
 - Monospace for labels/data, system sans for body paragraphs (readability fix)
 - SVG wireframe only — no heavy 3D library, so "high-performance" holds on mobile
 - Smooth scroll via Lenis + scroll animation via GSAP ScrollTrigger, loaded from CDN
+- Pinned scroll story: the core section pins and phases assemble on scroll (GSAP scrub); fallback shows all phases if GSAP fails or reduced-motion is on
+- Display typography (Space Grotesk + Inter + JetBrains Mono via Google Fonts), gradient accents, grid/glow hero, scroll progress bar, interactive service tabs, FAQ accordion
 - Progressive enhancement: if the CDNs fail, or reduced-motion is on, all content is still fully readable via IntersectionObserver reveals
 - Mobile: pinned/sticky layouts collapse to a single column, nav links collapse
 
