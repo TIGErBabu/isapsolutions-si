@@ -70,3 +70,6 @@ label{display:block;font-family:var(--mono);font-size:13px;margin:18px 0 6px}inp
 .tag,.num{opacity:.7;font-size:12px}
 .eyebrow{opacity:.85}
 .flow-btn.active{background:var(--cyan);color:#04121a;border-color:var(--cyan)}
+
+/* v3.2: abstract visuals only */
+.site-img{margin:28px 0}.site-img img{width:100%;height:auto;border:1px solid var(--line);border-radius:14px;display:block}.site-img figcaption{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:8px}
