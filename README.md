@@ -2,7 +2,7 @@
 
 v2 (2026-10-24) replaces the plain v1 after feedback that v1 looked oversimplistic. v1 is backed up in the goal files as `isapsolutions-v1-index.html`, not in this repo.
 v2.1 (2026-10-24) mobile-only fix: pin + GSAP scrub disabled at <=960px (native scroll + reveals), story wireframe boxes labeled, section padding tightened on mobile. Desktop (>960px) pin/scrub code is unchanged.
-v2.2 (2026-10-24) lighter mobile interaction: pin spacer stays desktop-only, but mobile regains interaction — CSS-sticky wireframe, phase highlight on scroll, Lenis + card reveals restored, animated dashes/tabs/FAQ/progress bar. No pin spacer on mobile, so no dead black scroll.
+v2.2 (2026-10-24) lighter mobile interaction was REVERTED the same day — the sticky wireframe looked odd on mobile. Site is back to v2.1: mobile static (native scroll + reveals, no pin/scrub), desktop pin/scrub unchanged.
 
 Single-page, client-facing website for **iSAPsolutions.si**.
 SI = Super Intelligence. Not a country claim.
