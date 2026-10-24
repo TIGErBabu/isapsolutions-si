@@ -6,71 +6,26 @@
 <title>iSAPsolutions.si — Super Intelligence for the Enterprise Core</title>
 <meta name="description" content="iSAPsolutions.si (SI = Super Intelligence) modernizes SAP and Oracle estates with AI agents that cut manual work, clean the core, and speed up decisions.">
 <meta name="theme-color" content="#050505">
+<meta property="og:title" content="iSAPsolutions.si — Super Intelligence for the Enterprise Core">
+<meta property="og:description" content="We modernize SAP and Oracle estates with AI agents that cut manual work, clean the core, and speed up decisions.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tigerbabu.github.io/isapsolutions-si/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://tigerbabu.github.io/isapsolutions-si/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"iSAPsolutions.si","url":"https://tigerbabu.github.io/isapsolutions-si/","description":"Enterprise AI consulting for SAP and Oracle estates. SI = Super Intelligence."}</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#050505;--panel:#0d1014;--panel2:#12161d;--ink:#fff;--muted:#a7adb8;--line:#232833;--cyan:#00f3ff;--cyan2:#3b82f6;--grad:linear-gradient(135deg,#00f3ff,#3b82f6 55%,#7c3aed);--mono:"JetBrains Mono",Consolas,monospace;--disp:"Space Grotesk",system-ui,sans-serif;--sans:"Inter",system-ui,sans-serif}
-*{box-sizing:border-box}html{scroll-behavior:auto}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;overflow-x:hidden}
-a{color:var(--cyan)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
-.wrap{max-width:1240px;margin:0 auto;padding:0 28px}.mono{font-family:var(--mono)}.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan)}
-h1,h2,h3{font-family:var(--disp);line-height:1.08;letter-spacing:-.02em}h1{font-size:clamp(46px,7.5vw,92px);margin:20px 0}h2{font-size:clamp(32px,4.6vw,56px);margin:14px 0 16px}h3{font-size:22px;margin:0 0 10px}
-.lead{font-size:clamp(18px,2.4vw,24px);color:#e8eaef;max-width:860px}.muted{color:var(--muted)}
-.progress{position:fixed;top:0;left:0;height:3px;background:var(--grad);width:0;z-index:100}
-/* Nav */
-.nav{position:fixed;inset:0 0 auto 0;z-index:60;background:rgba(5,5,5,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.nav-inner{max-width:1240px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-.brand{color:#fff;text-decoration:none;display:flex;align-items:center;gap:12px}.brand-mark{width:36px;height:36px;border-radius:9px;background:var(--grad);display:grid;place-items:center;font-family:var(--mono);font-weight:700;color:#050505}
-.brand b{font-family:var(--disp);font-size:18px}.brand small{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--muted)}
-.nav-links{display:flex;gap:22px}.nav-links a{color:#d6dae2;text-decoration:none;font-family:var(--mono);font-size:13px}.nav-links a:hover{color:var(--cyan)}
-.btn{display:inline-block;background:var(--cyan);color:#050505;border:1px solid var(--cyan);padding:13px 22px;font-family:var(--mono);font-weight:700;text-decoration:none;border-radius:999px;cursor:pointer;transition:.2s}.btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,243,255,.25)}
-.btn-ghost{background:rgba(255,255,255,.06);color:#fff;border-color:#333}
-/* Sections */
-section{padding:110px 0;position:relative}.section-head{max-width:860px;margin-bottom:36px}
-.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:18px;padding:28px;transition:.25s}.card:hover{transform:translateY(-4px);border-color:#3a4356;box-shadow:0 20px 50px rgba(0,0,0,.45)}
-.card .num{font-family:var(--mono);color:var(--cyan);font-size:13px}
-/* Hero */
-.hero{min-height:100vh;display:flex;align-items:center;padding:150px 0 90px;overflow:hidden}
-.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 420px at 70% 20%,rgba(0,243,255,.18),transparent 60%),radial-gradient(600px 400px at 15% 80%,rgba(124,58,237,.22),transparent 60%),linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:auto,auto,56px 56px,56px 56px;pointer-events:none}
-.hero .wrap{position:relative;z-index:2}.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
-.wire-card{background:rgba(13,16,20,.85);border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
-.wire-card svg{width:100%;height:auto}.dash{stroke:var(--cyan);stroke-width:1.2;stroke-dasharray:6 8;animation:dashmove 3s linear infinite}@keyframes dashmove{to{stroke-dashoffset:-56}}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}.scroll-hint{margin-top:44px;font-family:var(--mono);font-size:13px;letter-spacing:.12em;color:var(--cyan)}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}.stat{border:1px solid var(--line);border-radius:16px;padding:20px;background:rgba(255,255,255,.03)}.stat b{font-family:var(--disp);font-size:30px}.stat span{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--muted);margin-top:4px}
-/* Marquee */
-.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;overflow:hidden;white-space:nowrap}.marquee span{font-family:var(--mono);font-size:13px;letter-spacing:.18em;color:#c8cdd8;margin-right:44px}
-/* Pinned story */
-.story-pin{min-height:100vh;display:flex;align-items:center}.story-box{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;width:100%}
-.phase{opacity:.35;transform:translateY(16px);transition:.5s}.phase.active{opacity:1;transform:none}.phase h3{font-size:28px}
-/* Grids */
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.pillar{border-top:3px solid transparent;border-image:var(--grad) 1;padding-top:26px}.pillar ul{margin:14px 0 0;padding-left:18px;color:#d7dbe3}
-.matrix{display:grid;grid-template-columns:1fr 1.35fr;gap:44px;align-items:start}.metric{border:1px solid var(--line);border-radius:18px;padding:28px;margin-bottom:18px;background:linear-gradient(180deg,var(--panel2),var(--panel))}.metric strong{font-family:var(--disp);font-size:28px;display:block}.metric .tag{font-family:var(--mono);color:var(--cyan);font-size:12px;letter-spacing:.14em}
-/* Services tabs */
-.tabs{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0}.tab{background:#11151c;border:1px solid var(--line);color:#e6e9ef;border-radius:999px;padding:10px 16px;font-family:var(--mono);font-size:13px;cursor:pointer}.tab.active,.tab:hover{background:var(--cyan);color:#050505;border-color:var(--cyan)}
-.spotlight{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:start}.spotlight-visual{border-radius:18px;padding:28px;background:radial-gradient(400px 240px at 80% 20%,rgba(0,243,255,.22),transparent 60%),var(--panel2);border:1px solid var(--line);min-height:220px}
-/* Timeline */
-.timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:36px}.step{border-top:2px solid var(--cyan);padding-top:18px}.step b{font-family:var(--mono);color:var(--cyan)}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}.sticky{position:sticky;top:110px}
-.quote{font-family:var(--disp);font-size:26px;line-height:1.35;border-left:3px solid var(--cyan);padding-left:22px;margin:28px 0}
-details{border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:12px;background:var(--panel)}summary{cursor:pointer;font-weight:600;font-family:var(--disp)}
-/* Form */
-.form-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:28px;align-items:start}.form-wrap{background:var(--panel2);border:1px solid var(--line);border-radius:20px;padding:34px}
-label{display:block;font-family:var(--mono);font-size:13px;margin:18px 0 6px}input,select,textarea{width:100%;background:#050505;color:#fff;border:1px solid #333;border-radius:10px;padding:13px 14px;font-size:16px;font-family:var(--sans)}textarea{min-height:130px;resize:vertical}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}.success{display:none;border:1px solid var(--cyan);border-radius:12px;padding:16px;margin-top:20px;font-family:var(--mono);font-size:14px}
-.footer{padding:64px 0 44px;color:var(--muted);font-size:14px}.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
-.reveal{opacity:0;transform:translateY(28px)}.reveal.in-view{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}
-@media(max-width:960px){.hero-grid,.story-box,.matrix,.split,.spotlight,.form-grid{grid-template-columns:1fr}.grid3,.grid4{grid-template-columns:1fr 1fr}.timeline{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.nav-links{display:none}.sticky{position:static}section{padding:56px 0}.story-pin{min-height:auto}.story-box{gap:24px}.phase{opacity:1;transform:none}}
-@media(max-width:560px){.grid3,.grid4,.timeline,.stats{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}}
-@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.dash{animation:none}}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="progress" id="progress" aria-hidden="true"></div>
 <header class="nav"><div class="nav-inner">
 <a class="brand" href="#top"><span class="brand-mark">iS</span><span><b>iSAPsolutions.SI</b><small>SUPER INTELLIGENCE</small></span></a>
-<nav class="nav-links" aria-label="Primary"><a href="#services">Services</a><a href="#approach">Approach</a><a href="#outcomes">Outcomes</a><a href="#vision">Vision</a><a href="#contact">Contact</a></nav>
+<nav class="nav-links" aria-label="Primary"><a href="#services">Services</a><a href="#sap-depth">SAP Depth</a><a href="#approach">Approach</a><a href="#outcomes">Outcomes</a><a href="#vision">Vision</a><a href="#contact">Contact</a></nav>
+<button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="mobile-nav">Menu</button>
 <a class="btn" href="#contact">Book a Review</a>
-</div></header>
+</div><nav class="mobile-nav" id="mobile-nav" aria-label="Mobile"><a href="#services">Services</a><a href="#sap-depth">SAP Depth</a><a href="#approach">Approach</a><a href="#outcomes">Outcomes</a><a href="#vision">Vision</a><a href="#contact">Contact</a></nav></header>
 <main id="top">
 <section class="hero" aria-labelledby="hero-title"><div class="wrap">
 <p class="eyebrow reveal">iSAPsolutions.si // The Intelligence Apex</p>
@@ -171,18 +126,60 @@ label{display:block;font-family:var(--mono);font-size:13px;margin:18px 0 6px}inp
 <details class="reveal"><summary>Do we have to do a big-bang migration first?</summary><p class="muted">No. The approach starts with a pilot on one workflow, so value is proven before scale — including on existing SAP, Oracle, or mixed estates.</p></details>
 </div></section>
 
+
+<section id="sap-depth" aria-labelledby="sap-depth-title"><div class="wrap">
+<div class="section-head"><p class="eyebrow reveal">SAP Depth — For Buyers Who Know SAP</p><h2 id="sap-depth-title" class="reveal">Not just "SAP modernization." The actual work.</h2><p class="muted reveal">SAP and Oracle are separate tracks with separate risks. This section names the work, so a programme manager can judge whether it matches their estate. Partner and certification status is stated plainly in the footer — we do not claim a partnership we do not hold.</p></div>
+<h3 class="reveal">SAP Activate, in plain terms</h3>
+<div class="timeline">
+<div class="step reveal"><b>Discover</b><p>Readiness, clean-core and business-case check.</p></div>
+<div class="step reveal"><b>Prepare</b><p>Team, governance, landscape and scope lock.</p></div>
+<div class="step reveal"><b>Explore</b><p>Fit-to-standard workshops, gaps and backlog.</p></div>
+<div class="step reveal"><b>Realize</b><p>Build, configure, integrate, test, migrate data.</p></div>
+<div class="step reveal"><b>Deploy &amp; Run</b><p>Cutover, hypercare, then managed improvement.</p></div>
+</div>
+<div class="grid3" style="margin-top:32px">
+<article class="card reveal"><p class="num">SAP TRACK</p><h3>Modules &amp; Conversion</h3><p class="muted">Finance (FI/CO), procurement and inventory (MM), sales (SD), manufacturing (PP), warehouse (EWM) — scoped per client, not assumed. Conversion paths: greenfield, brownfield technical conversion, and selective data transition, including custom-code remediation and Fiori UX where it fits.</p></article>
+<article class="card reveal"><p class="num">BTP TRACK</p><h3>Extensions &amp; Integration</h3><p class="muted">SAP Business Technology Platform: Integration Suite for SAP-to-non-SAP flows, Extension Suite / CAP for side-by-side extensions that keep the core clean, and Fiori for role-based user experience. Extensions live outside the core wherever possible.</p></article>
+<article class="card reveal"><p class="num">DATA &amp; AI TRACK</p><h3>Data, AI &amp; Migration</h3><p class="muted">Migration Cockpit and data profiling/cleansing before cutover, master-data governance after it. SAP AI in SAP's own terms: Joule assistants, SAP AI Core, Datasphere for harmonized data, and Signavio for process analysis — used where they fit the workflow, not as buzzwords.</p></article>
+</div>
+<h3 style="margin-top:48px">Target architecture — labeled, not abstract</h3>
+<p class="muted reveal">How the pieces connect on a typical modernized estate. This is a reference pattern, not a claim about any one client's system.</p>
+<div class="arch">
+<div class="card reveal"><p class="num">SOURCE</p><h3>SAP S/4HANA + Oracle</h3><p class="muted">Core ERP, finance, supply chain and operations data. Clean core first.</p></div>
+<div class="card reveal"><p class="num">PLATFORM</p><h3>SAP BTP + Integration Suite</h3><p class="muted">APIs, events and extensions, kept outside the core.</p></div>
+<div class="card reveal"><p class="num">DATA</p><h3>Datasphere + Oracle AI Database</h3><p class="muted">Harmonized data and native vector search for retrieval.</p></div>
+<div class="card reveal"><p class="num">INTELLIGENCE</p><h3>Agents + Joule / AI Core</h3><p class="muted">Agents with approvals, audit trails and human-in-the-loop controls.</p></div>
+<div class="card reveal"><p class="num">EXPERIENCE</p><h3>Fiori + Dashboards</h3><p class="muted">Role-based screens and live forecasting views.</p></div>
+<div class="card reveal"><p class="num">RUN</p><h3>Monitoring + Managed Services</h3><p class="muted">Observability, rollback, hypercare and continuous improvement.</p></div>
+</div>
+<div class="grid3" style="margin-top:32px">
+<article class="card reveal"><p class="num">ORACLE TRACK — SEPARATE</p><h3>Oracle Estates</h3><p class="muted">Oracle AI Database and vector search, Autonomous Database patterns, and Oracle Cloud Infrastructure hosting where relevant. Scoped separately from SAP work — a dual-estate claim is only credible when each track is staffed and delivered separately.</p></article>
+<article class="card reveal"><p class="num">ECC CUSTOMERS</p><h3>The Maintenance Decision</h3><p class="muted">Customers still on ECC face a maintenance and migration decision, not just a technical upgrade. The intake form's footprint + cloud baseline is designed to start that conversation with scope, not with a sales pitch.</p></article>
+<article class="card reveal"><p class="num">WHAT WE DO NOT CLAIM</p><h3>Plainly Stated</h3><p class="muted">No named clients, no awards, no headcount, and no partner status are claimed on this site unless the firm supplies them. If a claim appears here later, it will carry its source.</p></article>
+</div>
+</div></section>
 <section id="contact" aria-labelledby="contact-title"><div class="wrap"><div class="form-grid">
 <div class="reveal"><p class="eyebrow">Technical Intake Hub</p><h2 id="contact-title">Submit your data profile for architectural review.</h2><p class="muted">Tell us your footprint, your cloud baseline, and the bottleneck that hurts most. We will reply with next steps for an architectural review.</p><p class="mono" style="font-size:13px">DIRECT UPLINKS<br><a href="mailto:labs@isapsolutions.si">labs@isapsolutions.si</a><br><a href="mailto:info@isapsolutions.si">info@isapsolutions.si</a></p><p class="kicker muted" style="font-size:13px">Inboxes pending creation — verify before treating the form as live.</p></div>
 <div class="form-wrap reveal"><form id="intake-form" novalidate>
+<div class="form-steps" id="step-dots" aria-hidden="true"><span class="on"></span><span></span><span></span></div>
+<div style="position:absolute;left:-9999px" aria-hidden="true"><label for="website">Website</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+<div class="form-step active">
 <div class="form-row"><div><label for="name">Contact Name / Title *</label><input id="name" name="name" type="text" required placeholder="e.g. Priya Sharma, CIO"></div><div><label for="company">Company *</label><input id="company" name="company" type="text" required placeholder="Company name"></div></div>
 <label for="email">Work Email *</label><input id="email" name="email" type="email" required placeholder="you@company.com">
+<p><button class="btn" type="button" data-next>Continue →</button></p>
+</div>
+<div class="form-step">
 <label for="footprint">Target Enterprise Footprint *</label><select id="footprint" name="footprint" required><option value="">Select…</option><option>SAP Suite</option><option>Oracle Stack</option><option>Custom Middleware</option><option>Mixed SAP + Oracle</option></select>
 <label for="cloud">Cloud Infrastructure Baseline *</label><select id="cloud" name="cloud" required><option value="">Select…</option><option>AWS</option><option>Azure</option><option>GCP</option><option>Hybrid</option><option>On-premise</option></select>
+<p><button class="btn btn-ghost" type="button" data-back>← Back</button> <button class="btn" type="button" data-next>Continue →</button></p>
+</div>
+<div class="form-step">
 <label for="bottleneck">Primary Operational Bottleneck *</label><textarea id="bottleneck" name="bottleneck" required placeholder="Where does work stall, get reworked, or wait for a report?"></textarea>
 <label><input type="checkbox" required style="width:auto"> I agree to be contacted about this architectural review. *</label>
-<p><button class="btn" type="submit">[SUBMIT DATA PROFILE FOR ARCHITECTURAL REVIEW]</button></p>
-<p class="muted" style="font-size:14px">Privacy: this profile is used only to assess and reply to your review request.</p>
+<p><button class="btn btn-ghost" type="button" data-back>← Back</button> <button class="btn" type="submit">[SUBMIT DATA PROFILE FOR ARCHITECTURAL REVIEW]</button></p>
+<p class="muted" style="font-size:14px">Privacy: this profile is used only to assess and reply to your review request. What happens next: we reply with next steps for an architectural review.</p>
 <div class="success" id="form-success" role="status">Thank you. Your data profile has been captured for architectural review. Note for reviewers: the live form backend to labs@ / info@ is not yet wired — those inboxes are still being created.</div>
+</div>
 </form></div>
 </div></div></section>
 </main>
@@ -195,50 +192,6 @@ label{display:block;font-family:var(--mono);font-size:13px;margin:18px 0 6px}inp
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
-<script>
-(function(){
-var services=[
-["S.01","SAP S/4HANA Modernization","RISE with SAP, S/4HANA Cloud Private and Public editions, greenfield, brownfield, and selective data transition.","Roadmap, clean-core assessment, and a migration path chosen for your estate — not a one-size template."],
-["S.02","SAP BTP & Integration","Extensions, APIs, and integrations between SAP and non-SAP systems, including custom middleware replacement.","An integration architecture that keeps the core clean while extensions live where they belong."],
-["S.03","Oracle AI Database & Vector Search","Native vector search and retrieval for AI agents, localized inside the enterprise data estate.","Search that understands operational context, not just keywords — inside your data, not outside it."],
-["S.04","Agentic Automation","Autonomous agents for repetitive workflows, with approvals, audit trails, and human-in-the-loop controls.","Agents that do the repetitive work, escalate the exceptions, and leave a trail you can audit."],
-["S.05","Data, Migration & Clean Core","Data profiling and cleansing, migration readiness, master-data governance, and technical-debt reduction.","Clean, governed data first — because agents on messy data just automate the mess faster."],
-["S.06","Analytics & Forecasting","Real-time telemetry, predictive forecasting, dashboards, and reporting on top of the modernized core.","Forecasts that move when operations move, not reports that explain last month."],
-["S.07","Cloud, Security & Managed Services","AWS, Azure, GCP, and hybrid hosting, Basis and operations, monitoring, security controls, and ongoing managed services.","A run model that keeps the core stable while it keeps improving."],
-["S.08","Change, Training & Adoption","Readiness assessment, role-based training, communications, and adoption tracking — so new systems actually get used.","People ready on day one, not just systems live on day one."]
-];
-document.querySelectorAll('.tab').forEach(function(btn){
-btn.addEventListener('click',function(){
-document.querySelectorAll('.tab').forEach(function(b){b.classList.remove('active')});btn.classList.add('active');
-var s=services[Number(btn.dataset.service)];document.getElementById('svc-num').textContent=s[0];document.getElementById('svc-title').textContent=s[1];document.getElementById('svc-desc').textContent=s[2];document.getElementById('svc-deliver').textContent=s[3];
-});
-});
-var form=document.getElementById('intake-form');
-if(form){form.addEventListener('submit',function(e){e.preventDefault();if(!form.checkValidity()){form.reportValidity();return;}document.getElementById('form-success').style.display='block';form.querySelector('button[type="submit"]').textContent='PROFILE CAPTURED — REVIEW PENDING';});}
-var items=document.querySelectorAll('.reveal');
-if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in-view');io.unobserve(en.target);}});},{threshold:.15});items.forEach(function(el){io.observe(el);});}else{items.forEach(function(el){el.classList.add('in-view');});}
-var progress=document.getElementById('progress');
-window.addEventListener('scroll',function(){var h=document.documentElement;var p=h.scrollTop/(h.scrollHeight-h.clientHeight||1);progress.style.width=(p*100)+'%';},{passive:true});
-var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-var phases=document.querySelectorAll('[data-phase]');
-if(reduced){items.forEach(function(el){el.classList.add('in-view');});phases.forEach(function(p){p.classList.add('active');});return;}
-/* Reverted to v2.1: no pin, no GSAP scrub on <=960px — native scroll + reveals only. Desktop code below is unchanged. */
-var isDesktop=window.matchMedia('(min-width: 961px)').matches;
-if(!isDesktop){phases.forEach(function(p){p.classList.add('active');});}
-try{
-if(!isDesktop){throw new Error('mobile: skip GSAP pin');}
-if(window.Lenis){var lenis=new Lenis({lerp:.09});(function raf(t){lenis.raf(t);requestAnimationFrame(raf);})(0);document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var tg=document.querySelector(a.getAttribute('href'));if(tg){e.preventDefault();lenis.scrollTo(tg,{offset:-80});}});});}
-if(window.gsap&&window.ScrollTrigger){
-gsap.registerPlugin(ScrollTrigger);
-var story=document.querySelector('.story-pin');
-if(story){
-gsap.to(story,{scrollTrigger:{trigger:story,start:'top top',end:'+=120%',pin:true,scrub:true,onUpdate:function(self){var i=self.progress<.33?0:self.progress<.66?1:2;phases.forEach(function(p,idx){p.classList.toggle('active',idx===i);});}}});
-}
-gsap.utils.toArray('.card,.metric').forEach(function(el){gsap.from(el,{y:36,opacity:0,duration:.8,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 88%'}});});
-}
-}catch(err){items.forEach(function(el){el.classList.add('in-view');});phases.forEach(function(p){p.classList.add('active');});}
-if(!window.gsap){phases.forEach(function(p){p.classList.add('active');});}
-})();
-</script>
+<script src="script.js" defer></script>
 </body>
 </html>

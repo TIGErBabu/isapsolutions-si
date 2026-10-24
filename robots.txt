@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tigerbabu.github.io/isapsolutions-si/sitemap.xml

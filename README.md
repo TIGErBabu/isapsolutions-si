@@ -3,6 +3,7 @@
 v2 (2026-10-24) replaces the plain v1 after feedback that v1 looked oversimplistic. v1 is backed up in the goal files as `isapsolutions-v1-index.html`, not in this repo.
 v2.1 (2026-10-24) mobile-only fix: pin + GSAP scrub disabled at <=960px (native scroll + reveals), story wireframe boxes labeled, section padding tightened on mobile. Desktop (>960px) pin/scrub code is unchanged.
 v2.2 (2026-10-24) lighter mobile interaction was REVERTED the same day — the sticky wireframe looked odd on mobile. Site is back to v2.1: mobile static (native scroll + reveals, no pin/scrub), desktop pin/scrub unchanged.
+v3 (2026-10-24) all three expert reviews implemented where feasible without inventing claims: split styles.css/script.js, single-animation system (reveals only + desktop pin), SEO (OG, canonical, JSON-LD, sitemap.xml, robots.txt, 404.html), mobile nav drawer, SAP Depth section (SAP Activate, modules, conversion, BTP, Datasphere/Joule/AI Core/Signavio, labeled target architecture, separate Oracle track, ECC decision, plain no-claims note), multi-step intake form with honeypot and a configurable FORM_ENDPOINT (empty until labs@/info@ inboxes exist — no fake send). Still boss-only, NOT invented: partner/certification status, named clients/case-study metrics, team bios, pricing/timeline ranges, form backend endpoint, custom domain.
 
 Single-page, client-facing website for **iSAPsolutions.si**.
 SI = Super Intelligence. Not a country claim.
