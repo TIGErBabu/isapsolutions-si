@@ -59,7 +59,7 @@ details{border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin
 label{display:block;font-family:var(--mono);font-size:13px;margin:18px 0 6px}input,select,textarea{width:100%;background:#050505;color:#fff;border:1px solid #333;border-radius:10px;padding:13px 14px;font-size:16px;font-family:var(--sans)}textarea{min-height:130px;resize:vertical}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}.success{display:none;border:1px solid var(--cyan);border-radius:12px;padding:16px;margin-top:20px;font-family:var(--mono);font-size:14px}
 .footer{padding:64px 0 44px;color:var(--muted);font-size:14px}.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
 .reveal{opacity:0;transform:translateY(28px)}.reveal.in-view{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}
-@media(max-width:960px){.hero-grid,.story-box,.matrix,.split,.spotlight,.form-grid{grid-template-columns:1fr}.grid3,.grid4{grid-template-columns:1fr 1fr}.timeline{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.nav-links{display:none}.sticky{position:static}section{padding:56px 0}.story-pin{min-height:auto}.story-box{gap:24px}.phase{opacity:1;transform:none}}
+@media(max-width:960px){.hero-grid,.story-box,.matrix,.split,.spotlight,.form-grid{grid-template-columns:1fr}.grid3,.grid4{grid-template-columns:1fr 1fr}.timeline{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.nav-links{display:none}.sticky{position:static}section{padding:56px 0}.story-pin{min-height:auto}.story-box{gap:24px}.story-box .wire-card{position:sticky;top:84px;z-index:3}.phase{opacity:1;transform:none;padding-left:14px;border-left:2px solid #232833}.phase.active{border-left-color:var(--cyan)}}
 @media(max-width:560px){.grid3,.grid4,.timeline,.stats{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.dash{animation:none}}
 </style>
@@ -222,17 +222,18 @@ window.addEventListener('scroll',function(){var h=document.documentElement;var p
 var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 var phases=document.querySelectorAll('[data-phase]');
 if(reduced){items.forEach(function(el){el.classList.add('in-view');});phases.forEach(function(p){p.classList.add('active');});return;}
-/* MOBILE-ONLY FIX (v2.1): no pin, no GSAP scrub on <=960px — native scroll + reveals only. Desktop code below is unchanged. */
+/* v2.2: pin scrub is desktop-only. Mobile gets sticky wireframe (CSS) + phase highlight + Lenis/cards, with NO pin spacer. */
 var isDesktop=window.matchMedia('(min-width: 961px)').matches;
-if(!isDesktop){phases.forEach(function(p){p.classList.add('active');});}
 try{
-if(!isDesktop){throw new Error('mobile: skip GSAP pin');}
 if(window.Lenis){var lenis=new Lenis({lerp:.09});(function raf(t){lenis.raf(t);requestAnimationFrame(raf);})(0);document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var tg=document.querySelector(a.getAttribute('href'));if(tg){e.preventDefault();lenis.scrollTo(tg,{offset:-80});}});});}
 if(window.gsap&&window.ScrollTrigger){
 gsap.registerPlugin(ScrollTrigger);
 var story=document.querySelector('.story-pin');
-if(story){
+if(story&&isDesktop){
 gsap.to(story,{scrollTrigger:{trigger:story,start:'top top',end:'+=120%',pin:true,scrub:true,onUpdate:function(self){var i=self.progress<.33?0:self.progress<.66?1:2;phases.forEach(function(p,idx){p.classList.toggle('active',idx===i);});}}});
+} else if(!isDesktop && 'IntersectionObserver' in window){
+var po=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){phases.forEach(function(p){p.classList.remove('active');});en.target.classList.add('active');}});},{threshold:.4});
+phases.forEach(function(p){po.observe(p);});
 }
 gsap.utils.toArray('.card,.metric').forEach(function(el){gsap.from(el,{y:36,opacity:0,duration:.8,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 88%'}});});
 }
