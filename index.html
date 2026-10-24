@@ -65,7 +65,7 @@
 <section id="outcomes" aria-labelledby="outcomes-title"><div class="wrap"><div class="matrix">
 <div><p class="eyebrow reveal">The Realization Matrix</p><h2 id="outcomes-title" class="reveal">Outcomes, stated plainly.</h2><p class="muted reveal">We publish percentages only where they have been measured on a named engagement. Until then, these are the outcomes our work is designed to deliver — not invented statistics. Results vary by scope, data readiness, and starting system.</p></div>
 <div>
-<article class="metric reveal"><span class="tag">OUTCOME 01</span><strong>Faster implementation</strong><p class="muted">Slashed implementation time via synthetic data injection and pre-built patterns — without skipping data cleansing or testing.</p></article>
+<article class="metric reveal"><span class="tag">OUTCOME 01</span><strong>Implementation without surprises</strong><p class="muted">Implementation without surprises — pre-built patterns help only after the hard work is done: custom code remediated, master data cleansed, and cutover fully tested. No step is skipped to claim speed.</p></article>
 <article class="metric reveal"><span class="tag">OUTCOME 02</span><strong>Predictive operations</strong><p class="muted">Real-time telemetry fabrics for forecasting that updates as live workflows change — not only at month-end.</p></article>
 <article class="metric reveal"><span class="tag">OUTCOME 03</span><strong>Faster innovation</strong><p class="muted">Self-improving managed services that dynamically adapt workflows as conditions change, with governance intact.</p></article>
 </div>
@@ -142,16 +142,33 @@
 <article class="card reveal"><p class="num">BTP TRACK</p><h3>Extensions &amp; Integration</h3><p class="muted">SAP Business Technology Platform: Integration Suite for SAP-to-non-SAP flows, Extension Suite / CAP for side-by-side extensions that keep the core clean, and Fiori for role-based user experience. Extensions live outside the core wherever possible.</p></article>
 <article class="card reveal"><p class="num">DATA &amp; AI TRACK</p><h3>Data, AI &amp; Migration</h3><p class="muted">Migration Cockpit and data profiling/cleansing before cutover, master-data governance after it. SAP AI in SAP's own terms: Joule assistants, SAP AI Core, Datasphere for harmonized data, and Signavio for process analysis — used where they fit the workflow, not as buzzwords.</p></article>
 </div>
-<h3 style="margin-top:48px">Target architecture — labeled, not abstract</h3>
-<p class="muted reveal">How the pieces connect on a typical modernized estate. This is a reference pattern, not a claim about any one client's system.</p>
-<div class="arch">
-<div class="card reveal"><p class="num">SOURCE</p><h3>SAP S/4HANA + Oracle</h3><p class="muted">Core ERP, finance, supply chain and operations data. Clean core first.</p></div>
-<div class="card reveal"><p class="num">PLATFORM</p><h3>SAP BTP + Integration Suite</h3><p class="muted">APIs, events and extensions, kept outside the core.</p></div>
-<div class="card reveal"><p class="num">DATA</p><h3>Datasphere + Oracle AI Database</h3><p class="muted">Harmonized data and native vector search for retrieval.</p></div>
-<div class="card reveal"><p class="num">INTELLIGENCE</p><h3>Agents + Joule / AI Core</h3><p class="muted">Agents with approvals, audit trails and human-in-the-loop controls.</p></div>
-<div class="card reveal"><p class="num">EXPERIENCE</p><h3>Fiori + Dashboards</h3><p class="muted">Role-based screens and live forecasting views.</p></div>
-<div class="card reveal"><p class="num">RUN</p><h3>Monitoring + Managed Services</h3><p class="muted">Observability, rollback, hypercare and continuous improvement.</p></div>
+
+<h3 style="margin-top:48px">Brownfield reality — the hard part, named plainly</h3>
+<p class="muted reveal">Synthetic test data is the easy part. The work that actually decides a migration is below, and it is priced and planned first, not discovered at cutover.</p>
+<div class="grid3">
+<article class="card reveal"><p class="num">01</p><h3>Custom Z-code</h3><p class="muted">Legacy Z-tables, Z-programs and custom enhancements are inventoried, then remediated, retired, or rebuilt as clean BTP extensions. Unremediated custom code is the most common reason a brownfield cutover slips.</p></article>
+<article class="card reveal"><p class="num">02</p><h3>Master-data cleansing</h3><p class="muted">Duplicate vendors, customers and materials are profiled, cleansed and governed before migration — not after go-live, when bad data becomes bad decisions.</p></article>
+<article class="card reveal"><p class="num">03</p><h3>Testing, downtime &amp; rollback</h3><p class="muted">Integration, user-acceptance and performance testing, a stated downtime window, and a rollback plan for cutover. If a step cannot be rolled back, it is not approved for cutover.</p></article>
 </div>
+<h3 style="margin-top:48px">Cost &amp; governance — before any agent posts anything</h3>
+<div class="grid3">
+<article class="card reveal"><p class="num">COST</p><h3>BTP consumption control</h3><p class="muted">BTP credits, API calls and AI usage are monitored with budgets and alerts, and agent designs are chosen partly on cost — not just capability. A design that cannot be run affordably is not a design.</p></article>
+<article class="card reveal"><p class="num">APPROVAL</p><h3>Human-in-the-loop</h3><p class="muted">Agents draft, retrieve and recommend. A human approves before anything posts to finance, inventory or a customer record. No agent posts unsupervised to the core.</p></article>
+<article class="card reveal"><p class="num">AUDIT</p><h3>Audit trail &amp; access</h3><p class="muted">Every agent action is logged — who triggered it, what data it used, who approved it. Role-based access applies to agents exactly as it applies to people.</p></article>
+</div>
+<p class="muted reveal" style="margin-top:24px"><b style="color:#fff">What is actually unified:</b> SAP and Oracle keep their own cores. What is shared is the data layer, the agent approval/audit layer, and monitoring — that shared governance is the "Apex." It is not a claim that one ERP replaces the other.</p>
+<h3 style="margin-top:48px">Target architecture — click a step to see what the agent does</h3>
+<p class="muted reveal">How the pieces connect on a typical modernized estate. This is a reference pattern, not a claim about any one client's system.</p>
+<p class="muted reveal">Illustrative workflow only — not live client data, not a live dashboard. Click a step.</p>
+<div class="flow-btns" style="display:flex;flex-wrap:wrap;gap:10px;margin:18px 0">
+<button class="btn btn-ghost flow-btn active" type="button" data-flow="0">1 · Trigger</button>
+<button class="btn btn-ghost flow-btn" type="button" data-flow="1">2 · Retrieve</button>
+<button class="btn btn-ghost flow-btn" type="button" data-flow="2">3 · Reason</button>
+<button class="btn btn-ghost flow-btn" type="button" data-flow="3">4 · Approve</button>
+<button class="btn btn-ghost flow-btn" type="button" data-flow="4">5 · Act</button>
+<button class="btn btn-ghost flow-btn" type="button" data-flow="5">6 · Audit</button>
+</div>
+<div class="card reveal" id="flow-panel" style="text-align:left"><h3 id="flow-title">1 · Trigger — S/4HANA event</h3><p class="muted" id="flow-body">An event in the core — for example, a blocked invoice or a stock shortfall — triggers the agent. Nothing runs on a schedule alone; it starts from a real business event.</p></div>
 <div class="grid3" style="margin-top:32px">
 <article class="card reveal"><p class="num">ORACLE TRACK — SEPARATE</p><h3>Oracle Estates</h3><p class="muted">Oracle AI Database and vector search, Autonomous Database patterns, and Oracle Cloud Infrastructure hosting where relevant. Scoped separately from SAP work — a dual-estate claim is only credible when each track is staffed and delivered separately.</p></article>
 <article class="card reveal"><p class="num">ECC CUSTOMERS</p><h3>The Maintenance Decision</h3><p class="muted">Customers still on ECC face a maintenance and migration decision, not just a technical upgrade. The intake form's footprint + cloud baseline is designed to start that conversation with scope, not with a sales pitch.</p></article>
@@ -161,25 +178,15 @@
 <section id="contact" aria-labelledby="contact-title"><div class="wrap"><div class="form-grid">
 <div class="reveal"><p class="eyebrow">Technical Intake Hub</p><h2 id="contact-title">Submit your data profile for architectural review.</h2><p class="muted">Tell us your footprint, your cloud baseline, and the bottleneck that hurts most. We will reply with next steps for an architectural review.</p><p class="mono" style="font-size:13px">DIRECT UPLINKS<br><a href="mailto:labs@isapsolutions.si">labs@isapsolutions.si</a><br><a href="mailto:info@isapsolutions.si">info@isapsolutions.si</a></p><p class="kicker muted" style="font-size:13px">Inboxes pending creation — verify before treating the form as live.</p></div>
 <div class="form-wrap reveal"><form id="intake-form" novalidate>
-<div class="form-steps" id="step-dots" aria-hidden="true"><span class="on"></span><span></span><span></span></div>
 <div style="position:absolute;left:-9999px" aria-hidden="true"><label for="website">Website</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
-<div class="form-step active">
 <div class="form-row"><div><label for="name">Contact Name / Title *</label><input id="name" name="name" type="text" required placeholder="e.g. Priya Sharma, CIO"></div><div><label for="company">Company *</label><input id="company" name="company" type="text" required placeholder="Company name"></div></div>
 <label for="email">Work Email *</label><input id="email" name="email" type="email" required placeholder="you@company.com">
-<p><button class="btn" type="button" data-next>Continue →</button></p>
-</div>
-<div class="form-step">
-<label for="footprint">Target Enterprise Footprint *</label><select id="footprint" name="footprint" required><option value="">Select…</option><option>SAP Suite</option><option>Oracle Stack</option><option>Custom Middleware</option><option>Mixed SAP + Oracle</option></select>
-<label for="cloud">Cloud Infrastructure Baseline *</label><select id="cloud" name="cloud" required><option value="">Select…</option><option>AWS</option><option>Azure</option><option>GCP</option><option>Hybrid</option><option>On-premise</option></select>
-<p><button class="btn btn-ghost" type="button" data-back>← Back</button> <button class="btn" type="button" data-next>Continue →</button></p>
-</div>
-<div class="form-step">
+<div class="form-row"><div><label for="footprint">Target Enterprise Footprint *</label><select id="footprint" name="footprint" required><option value="">Select…</option><option>SAP Suite</option><option>Oracle Stack</option><option>Custom Middleware</option><option>Mixed SAP + Oracle</option></select></div><div><label for="cloud">Cloud Infrastructure Baseline *</label><select id="cloud" name="cloud" required><option value="">Select…</option><option>AWS</option><option>Azure</option><option>GCP</option><option>Hybrid</option><option>On-premise</option></select></div></div>
 <label for="bottleneck">Primary Operational Bottleneck *</label><textarea id="bottleneck" name="bottleneck" required placeholder="Where does work stall, get reworked, or wait for a report?"></textarea>
 <label><input type="checkbox" required style="width:auto"> I agree to be contacted about this architectural review. *</label>
-<p><button class="btn btn-ghost" type="button" data-back>← Back</button> <button class="btn" type="submit">[SUBMIT DATA PROFILE FOR ARCHITECTURAL REVIEW]</button></p>
+<p><button class="btn" type="submit">[SUBMIT DATA PROFILE FOR ARCHITECTURAL REVIEW]</button></p>
 <p class="muted" style="font-size:14px">Privacy: this profile is used only to assess and reply to your review request. What happens next: we reply with next steps for an architectural review.</p>
 <div class="success" id="form-success" role="status">Thank you. Your data profile has been captured for architectural review. Note for reviewers: the live form backend to labs@ / info@ is not yet wired — those inboxes are still being created.</div>
-</div>
 </form></div>
 </div></div></section>
 </main>

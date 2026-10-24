@@ -20,12 +20,7 @@ var s=services[Number(btn.dataset.service)];document.getElementById('svc-num').t
 });
 });
 var form=document.getElementById('intake-form');
-var steps=form?form.querySelectorAll('.form-step'):[], curStep=0;
-function showStep(i){steps.forEach(function(s,idx){s.classList.toggle('active',idx===i);});var dots=document.querySelectorAll('#step-dots span');dots.forEach(function(d,idx){d.classList.toggle('on',idx<=i);});curStep=i;}
-if(form&&steps.length){showStep(0);
-form.querySelectorAll('[data-next]').forEach(function(b){b.addEventListener('click',function(){var cur=steps[curStep];if(!cur.checkValidity()){cur.reportValidity();return;}showStep(Math.min(curStep+1,steps.length-1));});});
-form.querySelectorAll('[data-back]').forEach(function(b){b.addEventListener('click',function(){showStep(Math.max(curStep-1,0));});});
-form.addEventListener('submit',function(e){e.preventDefault();if(document.getElementById('website')&&document.getElementById('website').value){document.getElementById('form-success').style.display='block';return;}if(!form.checkValidity()){form.reportValidity();return;}
+if(form){form.addEventListener('submit',function(e){e.preventDefault();if(document.getElementById('website')&&document.getElementById('website').value){document.getElementById('form-success').style.display='block';return;}if(!form.checkValidity()){form.reportValidity();return;}
 if(FORM_ENDPOINT){fetch(FORM_ENDPOINT,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)}).then(function(){document.getElementById('form-success').textContent='Thank you. Your data profile was submitted for architectural review.';document.getElementById('form-success').style.display='block';}).catch(function(){document.getElementById('form-success').textContent='Submission could not be sent right now. Please email info@isapsolutions.si directly.';document.getElementById('form-success').style.display='block';});}else{document.getElementById('form-success').style.display='block';}
 form.querySelector('button[type="submit"]').textContent='PROFILE CAPTURED — REVIEW PENDING';});}
 var items=document.querySelectorAll('.reveal');
@@ -51,4 +46,13 @@ gsap.to(story,{scrollTrigger:{trigger:story,start:'top top',end:'+=120%',pin:tru
 }
 }catch(err){items.forEach(function(el){el.classList.add('in-view');});phases.forEach(function(p){p.classList.add('active');});}
 if(!window.gsap){phases.forEach(function(p){p.classList.add('active');});}
+
+var flowData=[
+["1 · Trigger — S/4HANA event","An event in the core — for example, a blocked invoice or a stock shortfall — triggers the agent. Nothing runs on a schedule alone; it starts from a real business event."],
+["2 · Retrieve — BTP + data layer","The agent retrieves via BTP Integration Suite and Datasphere / Oracle AI Database: the relevant document, history and policy. Retrieval is scoped by role — it never sees data the user could not see."],
+["3 · Reason — Joule / AI Core","The agent reasons over the retrieved context and drafts a recommendation, with its sources shown. It does not invent a source; if the data is missing, it says so."],
+["4 · Approve — human in the loop","A human approves before anything posts. Approvals, cost and risk are shown in the approval step — this is the BTP-cost and governance gate, not an afterthought."],
+["5 · Act — post to the core","Only after approval does the agent act in S/4HANA or Oracle, through the same APIs and controls a person would use."],
+["6 · Audit — log everything","Every step is logged: trigger, data used, recommendation, approver, and result. That log is the audit trail, and it is reviewable after the fact."]];
+document.querySelectorAll('.flow-btn').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.flow-btn').forEach(function(x){x.classList.remove('active');});b.classList.add('active');var d=flowData[parseInt(b.getAttribute('data-flow'),10)];document.getElementById('flow-title').textContent=d[0];document.getElementById('flow-body').textContent=d[1];});});
 })();

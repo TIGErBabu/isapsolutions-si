@@ -65,3 +65,8 @@ label{display:block;font-family:var(--mono);font-size:13px;margin:18px 0 6px}inp
 .form-step{display:none}.form-step.active{display:block}
 .arch{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}.arch .card{text-align:left}
 @media(max-width:960px){.arch{grid-template-columns:1fr}}
+
+/* v3.1: hierarchy — only section titles are loud; markers are muted */
+.tag,.num{opacity:.7;font-size:12px}
+.eyebrow{opacity:.85}
+.flow-btn.active{background:var(--cyan);color:#04121a;border-color:var(--cyan)}
