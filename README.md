@@ -1,6 +1,7 @@
 # iSAPsolutions.si — Website (Premium v2)
 
 v2 (2026-10-24) replaces the plain v1 after feedback that v1 looked oversimplistic. v1 is backed up in the goal files as `isapsolutions-v1-index.html`, not in this repo.
+v2.1 (2026-10-24) mobile-only fix: pin + GSAP scrub disabled at <=960px (native scroll + reveals), story wireframe boxes labeled, section padding tightened on mobile. Desktop (>960px) pin/scrub code is unchanged.
 
 Single-page, client-facing website for **iSAPsolutions.si**.
 SI = Super Intelligence. Not a country claim.

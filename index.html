@@ -59,7 +59,7 @@ details{border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin
 label{display:block;font-family:var(--mono);font-size:13px;margin:18px 0 6px}input,select,textarea{width:100%;background:#050505;color:#fff;border:1px solid #333;border-radius:10px;padding:13px 14px;font-size:16px;font-family:var(--sans)}textarea{min-height:130px;resize:vertical}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}.success{display:none;border:1px solid var(--cyan);border-radius:12px;padding:16px;margin-top:20px;font-family:var(--mono);font-size:14px}
 .footer{padding:64px 0 44px;color:var(--muted);font-size:14px}.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
 .reveal{opacity:0;transform:translateY(28px)}.reveal.in-view{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}
-@media(max-width:960px){.hero-grid,.story-box,.matrix,.split,.spotlight,.form-grid{grid-template-columns:1fr}.grid3,.grid4{grid-template-columns:1fr 1fr}.timeline{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.nav-links{display:none}.sticky{position:static}section{padding:80px 0}}
+@media(max-width:960px){.hero-grid,.story-box,.matrix,.split,.spotlight,.form-grid{grid-template-columns:1fr}.grid3,.grid4{grid-template-columns:1fr 1fr}.timeline{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.nav-links{display:none}.sticky{position:static}section{padding:56px 0}.story-pin{min-height:auto}.story-box{gap:24px}.phase{opacity:1;transform:none}}
 @media(max-width:560px){.grid3,.grid4,.timeline,.stats{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.dash{animation:none}}
 </style>
@@ -98,7 +98,7 @@ label{display:block;font-family:var(--mono);font-size:13px;margin:18px 0 6px}inp
 <section id="core" aria-labelledby="core-title"><div class="wrap">
 <div class="section-head"><p class="eyebrow reveal">Agentic Injection Layer — Scroll Story</p><h2 id="core-title" class="reveal">Watch the core assemble.</h2><p class="muted reveal">Scroll: the wireframe pins, data lines light up, and each layer locks into place. On mobile or with reduced motion, all three layers are shown in full — no content is hidden behind animation.</p></div>
 <div class="story-pin"><div class="story-box">
-<div class="wire-card reveal"><svg viewBox="0 0 520 300" fill="none"><g stroke="#3d4452"><rect x="130" y="20" width="260" height="60" rx="10"/><rect x="130" y="110" width="260" height="60" rx="10"/><rect x="130" y="200" width="260" height="60" rx="10"/></g><g class="dash"><line x1="130" y1="50" x2="20" y2="20"/><line x1="390" y1="50" x2="500" y2="20"/><line x1="130" y1="230" x2="20" y2="280"/><line x1="390" y1="230" x2="500" y2="280"/></g><g fill="#00f3ff"><circle cx="20" cy="20" r="5"/><circle cx="500" cy="20" r="5"/><circle cx="20" cy="280" r="5"/><circle cx="500" cy="280" r="5"/></g></svg><p class="mono" style="font-size:12px;color:var(--muted)">PINNED CORE — PHASES ASSEMBLE ON SCROLL</p></div>
+<div class="wire-card reveal"><svg viewBox="0 0 520 300" fill="none"><g stroke="#3d4452"><rect x="130" y="20" width="260" height="60" rx="10"/><rect x="130" y="110" width="260" height="60" rx="10"/><rect x="130" y="200" width="260" height="60" rx="10"/></g><g fill="#e6e9ef" font-family="monospace" font-size="13"><text x="150" y="56">SAP S/4HANA CORE</text><text x="150" y="146">SAP BTP LAYER</text><text x="150" y="236">ORACLE VECTOR LAYER</text></g><g class="dash"><line x1="130" y1="50" x2="20" y2="20"/><line x1="390" y1="50" x2="500" y2="20"/><line x1="130" y1="230" x2="20" y2="280"/><line x1="390" y1="230" x2="500" y2="280"/></g><g fill="#00f3ff"><circle cx="20" cy="20" r="5"/><circle cx="500" cy="20" r="5"/><circle cx="20" cy="280" r="5"/><circle cx="500" cy="280" r="5"/></g></svg><p class="mono" style="font-size:12px;color:var(--muted)">PINNED CORE — PHASES ASSEMBLE ON SCROLL</p></div>
 <div>
 <article class="phase" data-phase><p class="eyebrow">Phase 01</p><h3>Unified Digital Core</h3><p class="muted">Modernization across SAP S/4HANA Cloud and SAP BTP. Clean-core assessment, S/4HANA roadmap, and BTP extension architecture — so agents run on a core that can actually support them.</p></article>
 <article class="phase" data-phase><p class="eyebrow">Phase 02</p><h3>High-Performance Vector Layers</h3><p class="muted">Oracle AI Database frameworks for native, localized vector search. Retrieval designed for agents, with a data-readiness check before anything is automated.</p></article>
@@ -222,7 +222,11 @@ window.addEventListener('scroll',function(){var h=document.documentElement;var p
 var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 var phases=document.querySelectorAll('[data-phase]');
 if(reduced){items.forEach(function(el){el.classList.add('in-view');});phases.forEach(function(p){p.classList.add('active');});return;}
+/* MOBILE-ONLY FIX (v2.1): no pin, no GSAP scrub on <=960px — native scroll + reveals only. Desktop code below is unchanged. */
+var isDesktop=window.matchMedia('(min-width: 961px)').matches;
+if(!isDesktop){phases.forEach(function(p){p.classList.add('active');});}
 try{
+if(!isDesktop){throw new Error('mobile: skip GSAP pin');}
 if(window.Lenis){var lenis=new Lenis({lerp:.09});(function raf(t){lenis.raf(t);requestAnimationFrame(raf);})(0);document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var tg=document.querySelector(a.getAttribute('href'));if(tg){e.preventDefault();lenis.scrollTo(tg,{offset:-80});}});});}
 if(window.gsap&&window.ScrollTrigger){
 gsap.registerPlugin(ScrollTrigger);
