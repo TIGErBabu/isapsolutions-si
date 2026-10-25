@@ -128,3 +128,13 @@ img{max-width:100%;height:auto}
 figure{max-width:100%;margin-left:0;margin-right:0;overflow:hidden}
 .site-img{margin:28px 0;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px;overflow:hidden}
 .site-img img{width:100%;height:auto;border-radius:12px;display:block;border:1px solid var(--line)}
+
+/* v5.4: services slider — one sliding card, synced tabs/arrows/dots/swipe */
+.spotlight{transition:transform .35s ease,opacity .35s ease}
+.spotlight.slide-out-left{transform:translateX(-30px);opacity:0}
+.spotlight.slide-out-right{transform:translateX(30px);opacity:0}
+.slider-controls{display:flex;align-items:center;gap:16px;margin-top:20px;flex-wrap:wrap}
+.slider-dots{display:flex;gap:8px;align-items:center}
+.slider-dots button{width:12px;height:12px;border-radius:50%;border:1px solid #555;background:transparent;cursor:pointer;padding:0}
+.slider-dots button.active{background:var(--cyan);border-color:var(--cyan)}
+@media(prefers-reduced-motion:reduce){.spotlight{transition:none}}

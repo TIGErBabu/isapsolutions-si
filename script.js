@@ -13,12 +13,45 @@ var services=[
 ["S.07","Cloud, Security & Managed Services","AWS, Azure, GCP, and hybrid hosting, Basis and operations, monitoring, security controls, and ongoing managed services.","A run model that keeps the core stable while it keeps improving."],
 ["S.08","Change, Training & Adoption","Readiness assessment, role-based training, communications, and adoption tracking — so new systems actually get used.","People ready on day one, not just systems live on day one."]
 ];
-document.querySelectorAll('.tab').forEach(function(btn){
-btn.addEventListener('click',function(){
-document.querySelectorAll('.tab').forEach(function(b){b.classList.remove('active')});btn.classList.add('active');
-var s=services[Number(btn.dataset.service)];document.getElementById('svc-num').textContent=s[0];document.getElementById('svc-title').textContent=s[1];document.getElementById('svc-desc').textContent=s[2];document.getElementById('svc-deliver').textContent=s[3];
-});
-});
+var svcTabs=document.querySelectorAll('.tab');
+var svcSlider=document.getElementById('svc-slider');
+var svcDotsWrap=document.getElementById('svc-dots');
+var svcIndex=0;
+var svcDots=[];
+if(svcDotsWrap&&services.length){
+  services.forEach(function(_,i){
+    var d=document.createElement('button');d.type='button';d.setAttribute('aria-label','Service '+(i+1));
+    d.addEventListener('click',function(){showService(i);});svcDotsWrap.appendChild(d);svcDots.push(d);
+  });
+}
+function renderService(i){
+  var s=services[i];
+  document.getElementById('svc-num').textContent=s[0];
+  document.getElementById('svc-title').textContent=s[1];
+  document.getElementById('svc-desc').textContent=s[2];
+  document.getElementById('svc-deliver').textContent=s[3];
+  svcTabs.forEach(function(b,bi){b.classList.toggle('active',bi===i);});
+  svcDots.forEach(function(d,di){d.classList.toggle('active',di===i);});
+}
+function showService(i){
+  var next=((i%services.length)+services.length)%services.length;
+  var dir=next>svcIndex? 'left':'right';
+  svcIndex=next;
+  if(svcSlider && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    svcSlider.classList.add(dir==='left'?'slide-out-left':'slide-out-right');
+    setTimeout(function(){renderService(svcIndex);svcSlider.classList.remove('slide-out-left','slide-out-right');},180);
+  } else { renderService(svcIndex); }
+}
+svcTabs.forEach(function(btn,bi){btn.addEventListener('click',function(){showService(bi);});});
+var svcPrev=document.getElementById('svc-prev');if(svcPrev)svcPrev.addEventListener('click',function(){showService(svcIndex-1);});
+var svcNext=document.getElementById('svc-next');if(svcNext)svcNext.addEventListener('click',function(){showService(svcIndex+1);});
+if(svcSlider){
+  renderService(0);
+  var tx=null;
+  svcSlider.addEventListener('touchstart',function(e){tx=e.touches[0].clientX;},{passive:true});
+  svcSlider.addEventListener('touchend',function(e){if(tx===null)return;var dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>50){showService(svcIndex+(dx<0?1:-1));}tx=null;},{passive:true});
+  svcSlider.addEventListener('keydown',function(e){if(e.key==='ArrowRight')showService(svcIndex+1);if(e.key==='ArrowLeft')showService(svcIndex-1);});
+}
 var form=document.getElementById('intake-form');
 if(form){form.addEventListener('submit',function(e){e.preventDefault();if(document.getElementById('website')&&document.getElementById('website').value){document.getElementById('form-success').style.display='block';return;}if(!form.checkValidity()){form.reportValidity();return;}
 if(FORM_ENDPOINT){fetch(FORM_ENDPOINT,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)}).then(function(){document.getElementById('form-success').textContent='Thank you. Your data profile was submitted for architectural review.';document.getElementById('form-success').style.display='block';}).catch(function(){document.getElementById('form-success').textContent='Submission could not be sent right now. Please email info@isapsolutions.si directly.';document.getElementById('form-success').style.display='block';});}else{document.getElementById('form-success').style.display='block';}

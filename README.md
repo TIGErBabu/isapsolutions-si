@@ -84,3 +84,4 @@ python3 -m http.server 8000
 2. Enable GitHub Pages from `main` (or use Netlify / Cloudflare Pages with the same files).
 3. In the domain DNS, point `isapsolutions.si` to the Pages host and enable HTTPS.
 4. Wire the intake form to a form backend (Netlify Forms, Formspree, or similar) once the inboxes exist — the current form shows a client-side confirmation only.
+- **v5.4:** Services rebuilt as a synced slider — tabs + one sliding card, duplicate 8-card grid removed. Click a tab, Prev/Next, a dot, or swipe on mobile: the card slides (direction-aware, reduced-motion fallback to fade) and the active tab/dot updates to match. Keyboard arrows work when the card is focused. "Discuss this service" now links to `contact.html` (was a dead `#contact` anchor on the Services page).
