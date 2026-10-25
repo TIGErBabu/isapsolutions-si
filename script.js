@@ -56,3 +56,29 @@ var flowData=[
 ["6 · Audit — log everything","Every step is logged: trigger, data used, recommendation, approver, and result. That log is the audit trail, and it is reviewable after the fact."]];
 document.querySelectorAll('.flow-btn').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.flow-btn').forEach(function(x){x.classList.remove('active');});b.classList.add('active');var d=flowData[parseInt(b.getAttribute('data-flow'),10)];document.getElementById('flow-title').textContent=d[0];document.getElementById('flow-body').textContent=d[1];});});
 })();
+
+/* v5: animated counters + demo dashboard (guarded, runs only where elements exist) */
+(function(){
+  document.querySelectorAll('[data-count]').forEach(function(el){
+    var target=parseInt(el.getAttribute('data-count'),10), done=false;
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!done){done=true;var n=0;var t=setInterval(function(){n++;el.textContent=String(n).padStart(2,'0');if(n>=target)clearInterval(t);},90);}});},{threshold:0.5});
+    io.observe(el);
+  });
+  var feed=document.getElementById('dash-feed');
+  if(feed){
+    var lines=["Agent retrieved PO 45001235 + payment policy — awaiting approval","Agent flagged missing goods receipt — drafted query, not a posting","Human approved invoice 900125 — logged to audit trail (demo only)","Agent checked BTP consumption — within demo budget","Agent retrieved contract terms for invoice 900126 — sources shown"];
+    var i=0;
+    setInterval(function(){
+      var div=document.createElement('div');div.textContent='● '+lines[i%lines.length];feed.appendChild(div);i++;
+      while(feed.children.length>6)feed.removeChild(feed.firstChild);
+      var k=document.getElementById('kpi-blocked');if(k)k.textContent=String(10+((i*3)%9));
+    },4000);
+  }
+  document.querySelectorAll('[data-approve]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var r=document.getElementById('queue-result');
+      if(r)r.textContent = b.getAttribute('data-approve')==='1' ? ' Approved in demo — nothing was actually posted to SAP.' : ' Escalated in demo — routed to a human reviewer.';
+      var p=document.getElementById('kpi-pending');if(p)p.textContent='4';
+    });
+  });
+})();
