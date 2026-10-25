@@ -23,8 +23,7 @@ section{padding:110px 0;position:relative}.section-head{max-width:860px;margin-b
 .hero .wrap{position:relative;z-index:2}.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
 .wire-card{background:rgba(13,16,20,.85);border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
-.wire-card svg{width:100%;height:auto}.dash{stroke:var(--cyan);stroke-width:1.2;stroke-dasharray:6 8;animation:dashmove 3s linear infinite}@keyframes dashmove{to{stroke-dashoffset:-56}}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}.scroll-hint{margin-top:44px;font-family:var(--mono);font-size:13px;letter-spacing:.12em;color:var(--cyan)}
+.wire-card svg{width:100%;height:auto}.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}.scroll-hint{margin-top:44px;font-family:var(--mono);font-size:13px;letter-spacing:.12em;color:var(--cyan)}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}.stat{border:1px solid var(--line);border-radius:16px;padding:20px;background:rgba(255,255,255,.03)}.stat b{font-family:var(--disp);font-size:30px}.stat span{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--muted);margin-top:4px}
 /* Marquee */
 .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;overflow:hidden;white-space:nowrap}.marquee span{font-family:var(--mono);font-size:13px;letter-spacing:.18em;color:#c8cdd8;margin-right:44px}
@@ -50,8 +49,7 @@ label{display:block;font-family:var(--mono);font-size:13px;margin:18px 0 6px}inp
 .reveal{opacity:0;transform:translateY(28px)}.reveal.in-view{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}
 @media(max-width:960px){.hero-grid,.story-box,.matrix,.split,.spotlight,.form-grid{grid-template-columns:1fr}.grid3,.grid4{grid-template-columns:1fr 1fr}.timeline{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.nav-links{display:none}.sticky{position:static}section{padding:56px 0}.story-pin{min-height:auto}.story-box{gap:24px}.phase{opacity:1;transform:none}}
 @media(max-width:560px){.grid3,.grid4,.timeline,.stats{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}}
-@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.dash{animation:none}}
-
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}
 /* v3: mobile nav drawer, form steps, architecture */
 .menu-btn{display:none;background:transparent;border:1px solid #333;color:#fff;border-radius:10px;padding:10px 14px;font-family:var(--mono);cursor:pointer}
 .mobile-nav{display:none}
@@ -96,12 +94,14 @@ label{display:block;font-family:var(--mono);font-size:13px;margin:18px 0 6px}inp
 .glass:hover{box-shadow:0 12px 40px rgba(0,243,255,.18)}
 .client-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
 .client-chips span{border:1px solid #2a2f3a;border-radius:999px;padding:9px 16px;font-weight:600;letter-spacing:.02em;background:#0b0e14}
-.dash{background:#0b0e14;border:1px solid #222;border-radius:16px;padding:22px}
-.dash-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.dash-kpi{background:#11151f;border:1px solid #262c38;border-radius:12px;padding:16px}
-.dash-kpi b{font-size:28px;color:#00f3ff}
-.dash-kpi span{display:block;color:#9aa3b2;font-size:12px;letter-spacing:.08em}
-.dash-feed{margin-top:16px;background:#050505;border:1px solid #222;border-radius:12px;padding:14px;font-family:monospace;font-size:13px;line-height:1.7;min-height:120px}
-.dash-queue button{margin-right:8px}
-@media(max-width:960px){.dash-grid{grid-template-columns:1fr 1fr}}
-@media(prefers-reduced-motion:reduce){.hero-orbs i{animation:none}}
+@media(max-width:960px){@media(prefers-reduced-motion:reduce){.hero-orbs i{animation:none}}
+
+/* v5.1 final draft: colour breaks beyond cyan — one light tint per page, like Home's story break */
+.light-break{padding:56px 0}
+.light-break h2{color:#111}
+.light-break .muted{color:#444}
+.light-break .eyebrow{color:#006a7a}
+.tint-warm{background:#fdf3e3}
+.tint-mint{background:#e9f6ef}
+.tint-violet{background:#eceeff}
+.tint-rose{background:#fdeef1}
