@@ -51,14 +51,6 @@ label{display:block;font-family:var(--mono);font-size:13px;margin:18px 0 6px}inp
 @media(max-width:560px){.grid3,.grid4,.timeline,.stats{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 /* v3: mobile nav drawer, form steps, architecture */
-.menu-btn{display:none;background:transparent;border:1px solid #333;color:#fff;border-radius:10px;padding:10px 14px;font-family:var(--mono);cursor:pointer}
-.mobile-nav{display:none}
-@media(max-width:960px){
-  .menu-btn{display:inline-block}
-  .mobile-nav{display:none;position:absolute;top:64px;left:0;right:0;background:#0d1014;border-bottom:1px solid var(--line);padding:18px 28px;flex-direction:column;gap:14px}
-  .mobile-nav.open{display:flex}
-  .mobile-nav a{color:#e6e9ef;text-decoration:none;font-family:var(--mono);font-size:15px}
-}
 .form-steps{display:flex;gap:8px;margin:10px 0 4px}.form-steps span{flex:1;height:4px;background:#232833;border-radius:99px}.form-steps span.on{background:var(--cyan)}
 .form-step{display:none}.form-step.active{display:block}
 .arch{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}.arch .card{text-align:left}
@@ -106,11 +98,6 @@ label{display:block;font-family:var(--mono);font-size:13px;margin:18px 0 6px}inp
 .tint-violet{background:#eceeff}
 .tint-rose{background:#fdeef1}
 
-/* v5.2: duplicate-nav fix — mobile drawer is hidden unless opened, on every device */
-.mobile-nav{display:none}
-.mobile-nav.open{display:flex}
-.menu-btn{display:none}
-@media(max-width:960px){.menu-btn{display:inline-block}}
 /* v5.2: per-page accent colours, so no page is cyan-only */
 .page-services .eyebrow,.page-services .card .num,.page-services .tag{color:#f59e0b}
 .page-sap .eyebrow,.page-sap .card .num,.page-sap .tag{color:#a78bfa}
@@ -121,3 +108,23 @@ label{display:block;font-family:var(--mono);font-size:13px;margin:18px 0 6px}inp
 .tint-mint .eyebrow{color:#047857}
 .tint-rose .eyebrow{color:#be123c}
 .light-break{padding:72px 0}
+
+/* v5.3: menu leak fix — ONE nav rule set, no duplicates, no row layout ever */
+.menu-btn{display:none}
+.mobile-nav{display:none!important}
+@media(max-width:960px){
+  .nav-links{display:none}
+  .menu-btn{display:inline-block}
+  .mobile-nav{position:absolute;top:100%;left:0;right:0;background:#0d1014;border-bottom:1px solid var(--line);padding:18px 28px;flex-direction:column;gap:14px;z-index:59}
+  .mobile-nav.open{display:flex!important;flex-direction:column!important}
+  .mobile-nav a{display:block;padding:8px 0;color:#e6e9ef;text-decoration:none;font-family:var(--mono);font-size:15px}
+}
+@media(min-width:961px){
+  .mobile-nav{display:none!important}
+  .menu-btn{display:none!important}
+}
+/* v5.3: image leak fix — every visual contained in a card, never edge-to-edge */
+img{max-width:100%;height:auto}
+figure{max-width:100%;margin-left:0;margin-right:0;overflow:hidden}
+.site-img{margin:28px 0;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px;overflow:hidden}
+.site-img img{width:100%;height:auto;border-radius:12px;display:block;border:1px solid var(--line)}
